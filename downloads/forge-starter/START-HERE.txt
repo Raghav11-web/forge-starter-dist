@@ -1,0 +1,25 @@
+Forge starter pack - no GitHub needed
+=====================================
+
+You do the work. We find the gigs.
+
+3 steps (Mac or Windows with Python 3.9+):
+
+1) Unzip this folder anywhere (Desktop is fine).
+2) Open Terminal (Mac) or Command Prompt (Windows).
+3) Copy-paste these three commands one by one
+   (change the path if you unzipped somewhere else):
+
+   cd ~/Desktop/forge-starter
+   python3 -m pip install -r requirements.txt
+   bash scripts/run_pipeline.sh 10
+
+That finds leads and writes proposal drafts.
+Nothing is emailed until YOU add SMTP and run with --send.
+
+More help:
+- docs/5-step-picture-guide.md
+- docs/how-to-use.md
+- Or book Guided setup ($49): https://forge-freelancer.vercel.app/#order
+
+Email: proximus.desk@gmail.com

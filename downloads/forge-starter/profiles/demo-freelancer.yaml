@@ -1,0 +1,69 @@
+# Demo freelancer profile — aligned with Raghav / Proximus automation niche
+id: raghav-demo
+name: Raghav
+display_name: Raghav
+email: proximus.desk@gmail.com
+niche: business automation, AI chat assistants, WhatsApp/Instagram auto-replies, lead capture, booking bots
+skills:
+  - python
+  - automation
+  - chatbot
+  - whatsapp
+  - instagram
+  - n8n
+  - zapier
+  - make.com
+  - ai
+  - openai
+  - langchain
+  - webhooks
+  - api
+  - javascript
+  - next.js
+  - vercel
+  - customer support automation
+  - lead generation
+  - crm
+  - booking
+rate_band:
+  currency: USD
+  min: 25
+  max: 80
+  note: project or hourly depending on scope
+portfolio:
+  - https://proximus-landing.vercel.app
+  - https://proximus-global.vercel.app
+  - https://proximus-dashboard.vercel.app
+bio: >
+  I build simple automation for shops and startups: auto replies,
+  lead capture, bookings and daily reports. Demo first, then decide.
+preferred_keywords:
+  - automation
+  - chatbot
+  - ai assistant
+  - whatsapp
+  - no-code
+  - n8n
+  - zapier
+  - make
+  - freelance
+  - contract
+  - consultant
+  - bot
+  - openai
+  - llm
+  - customer support
+  - lead
+  - crm
+  - booking
+  - python
+  - api integration
+avoid_keywords:
+  - unpaid
+  - equity only
+  - intern
+locations_ok:
+  - remote
+  - worldwide
+  - india
+  - asia

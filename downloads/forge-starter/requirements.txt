@@ -1,0 +1,3 @@
+# Forge Freelancer Ops — stdlib-first MVP
+# Optional: PyYAML for nicer profile parsing (fallback uses a tiny YAML subset reader)
+PyYAML>=6.0

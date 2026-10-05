@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forge — You build. We find the work.</title>
+<meta name="description" content="Forge finds freelance gigs on public job boards, matches them to your skills, drafts short proposals and queues outreach for your approval. You build. We find the work.">
+<meta property="og:title" content="Forge — You build. We find the work.">
+<meta property="og:description" content="Lead find → match → proposal → queue. A freelancer ops toolkit by Raghav at Proximus.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#14B8A6">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="#top"><img src="/assets/forge-mark.svg" alt="" width="36" height="36"> Forge</a>
+  <div class="links">
+    <a href="#demo">Demo</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#no-github">No GitHub?</a><a href="#install">Install</a><a href="#faq">FAQ</a>
+    <a class="btn btn-p btn-sm" href="#order">Book setup</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="blob" style="width:520px;height:520px;background:var(--sky);right:-160px;top:-180px"></div>
+  <div class="blob" style="width:380px;height:380px;background:var(--mint);left:-170px;bottom:-140px"></div>
+  <div class="blob" style="width:260px;height:260px;background:var(--butter);right:30%;bottom:-150px"></div>
+  <div class="wrap">
+    <div>
+      <span class="tag">Freelancer ops · by Proximus</span>
+      <h1>You build.<br><em>We find the work.</em></h1>
+      <p class="lead">Forge scans public job boards, scores every gig against your skills, writes a short proposal for the best ones and lines them up for your approval. You stop hunting. You start shipping.</p>
+      <div class="cta">
+        <a class="btn btn-p" href="#demo">See the demo</a>
+        <a class="btn btn-t" href="#order">Book a setup</a>
+        <a class="btn btn-g" href="#no-github">No GitHub? Start here</a>
+        <a class="btn btn-g" href="#install">Install via GitHub</a>
+      </div>
+      <div class="chips">
+        <span class="chip"><b>3</b> public sources</span>
+        <span class="chip"><b>0</b> auto-sends without you</span>
+        <span class="chip"><b>No</b> Upwork / LinkedIn scraping</span>
+      </div>
+    </div>
+    <div class="board" aria-hidden="true">
+      <div class="pin tall">
+        <div class="k">Today's top matches</div>
+        <div class="lead-row"><span>Chief Architect · Legion</span><span class="score">33.3</span></div>
+        <div class="lead-row"><span>Frontend Web Dev · KoboToolbox</span><span class="score">28.6</span></div>
+        <div class="lead-row"><span>Senior AI Engineer · A.Team</span><span class="score">24.0</span></div>
+        <p class="mini" style="margin-top:10px">Scored against your skills, niche &amp; keywords.</p>
+      </div>
+      <div class="pin sky"><div class="k">Leads found</div><div class="big">10</div><p class="mini">Remotive · WWR · RemoteOK</p></div>
+      <div class="pin mint"><div class="k">Drafts ready</div><div class="big">5</div><p class="mini">Waiting for your OK</p></div>
+      <div class="pin butter" style="grid-column:span 2"><div class="k">Daily digest</div><p class="mini" style="margin-top:6px">5 approved · 0 follow-ups due · 0 STOPs. One summary, every morning.</p></div>
+    </div>
+  </div>
+</header>
+
+<section id="demo" class="alt">
+  <div class="wrap">
+    <div class="sec-h"><span class="tag" style="background:var(--mint)">Live walkthrough</span><h2>From job board to proposal in one run.</h2><p>Click a step or let it play. This is real output from a Forge run on public boards (demo profile: an automation freelancer).</p></div>
+    <div class="demo">
+      <div class="steps" role="tablist">
+        <button class="step on" data-step="0" role="tab"><span class="n c1">1</span><span>Find leads<small>Public APIs &amp; RSS</small><div class="bar"><i></i></div></span></button>
+        <button class="step" data-step="1" role="tab"><span class="n c2">2</span><span>Match<small>Score vs your profile</small><div class="bar"><i></i></div></span></button>
+        <button class="step" data-step="2" role="tab"><span class="n c3">3</span><span>Proposal<small>Short, plain English</small><div class="bar"><i></i></div></span></button>
+        <button class="step" data-step="3" role="tab"><span class="n c4">4</span><span>Queue<small>You approve</small><div class="bar"><i></i></div></span></button>
+        <button class="step" data-step="4" role="tab"><span class="n c5">5</span><span>Digest<small>One daily summary</small><div class="bar"><i></i></div></span></button>
+      </div>
+      <div class="screen">
+        <div class="top"><i></i><i></i><i></i><span id="scr-title">forge · find_leads.py</span></div>
+
+        <div class="pane on" data-title="forge · find_leads.py">
+<div class="term"><span class="p">$</span> python3 scripts/find_leads.py --limit 15
+<span class="dim">→ remotive.com/api/remote-jobs ........</span> <span class="ok">ok</span>
+<span class="dim">→ weworkremotely.com (RSS) ............</span> <span class="ok">ok</span>
+<span class="dim">→ remoteok.com/api ....................</span> <span class="ok">ok</span>
+<span class="ok">✓ 10 new leads</span> → data/leads/leads-latest.json + .csv</div>
+          <table class="t"><thead><tr><th>Role</th><th>Company</th><th>Source</th></tr></thead><tbody>
+            <tr><td>Senior Independent AI Engineer / Architect</td><td>A.Team</td><td><span class="src r">remotive</span></td></tr>
+            <tr><td>Frontend Web Application Developer</td><td>KoboToolbox</td><td><span class="src r">remotive</span></td></tr>
+            <tr><td>Chief Architect</td><td>Legion</td><td><span class="src w">weworkremotely</span></td></tr>
+            <tr><td>AI Trainer — Image QA Evaluator</td><td>iMerit Technology</td><td><span class="src">remoteok</span></td></tr>
+          </tbody></table>
+        </div>
+
+        <div class="pane" data-title="forge · match_leads.py">
+<div class="term"><span class="p">$</span> python3 scripts/match_leads.py --profile profiles/you.yaml
+<span class="ok">✓ 10 leads scored</span> <span class="dim">· skills · niche · preferred keywords · avoid list</span></div>
+          <table class="t"><thead><tr><th>Lead</th><th>Why it matched</th><th>Score</th></tr></thead><tbody>
+            <tr><td>Chief Architect · Legion</td><td><div class="hits"><span>automation</span><span>python</span><span>llm</span><span>integration</span></div></td><td><div class="meter"><i style="width:82%"></i></div> 33.3</td></tr>
+            <tr><td>Frontend Web Dev · KoboToolbox</td><td><div class="hits"><span>api</span><span>python</span><span>bot</span></div></td><td><div class="meter"><i style="width:70%"></i></div> 28.6</td></tr>
+            <tr><td>AI Engineer · A.Team</td><td><div class="hits"><span>contract</span><span>llm</span><span>ai</span><span>api</span></div></td><td><div class="meter"><i style="width:59%"></i></div> 24.0</td></tr>
+          </tbody></table>
+        </div>
+
+        <div class="pane" data-title="data/proposals/05-a-team-senior-ai-engineer.md">
+          <div class="mail">
+            <div class="h"><b>Subject:</b> Re: Senior Independent AI Engineer / Architect — quick fit check &nbsp; <span class="badge b-draft">draft · not sent</span></div>
+            <p>Hi A.Team team,</p>
+            <p>I saw your post for Senior Independent AI Engineer / Architect. I build simple automation for shops and startups: auto replies, lead capture, bookings and daily reports.</p>
+            <p>For this role, I can help with AI and API work. I can start with a short paid demo on one real workflow, then we decide.</p>
+            <p>If this fits, reply here and I will share a 3-step plan for your use case.</p>
+            <p>Thanks,<br>Your name · your portfolio link</p>
+          </div>
+          <p class="demo-cap">Drafts are markdown files. Edit the tone, then approve only the ones you like.</p>
+        </div>
+
+        <div class="pane" data-title="forge · queue_outreach.py --list">
+<div class="term"><span class="p">$</span> python3 scripts/queue_outreach.py --approve all --list
+<span class="p">$</span> python3 scripts/send_outreach.py   <span class="dim"># dry-run, nothing leaves your machine</span></div>
+          <table class="t"><thead><tr><th>Queue item</th><th>Company</th><th>Status</th></tr></thead><tbody>
+            <tr><td>q-b097529389b2</td><td>A.Team</td><td><span class="badge b-ok">approved</span></td></tr>
+            <tr><td>q-1fe63726f303</td><td>KoboToolbox</td><td><span class="badge b-ok">approved</span></td></tr>
+            <tr><td>q-47fe2f515b7e</td><td>Legion</td><td><span class="badge b-draft">draft</span></td></tr>
+            <tr><td>q-example-stop</td><td>Replied "STOP"</td><td><span class="badge b-stop">stop · never contacted again</span></td></tr>
+          </tbody></table>
+        </div>
+
+        <div class="pane" data-title="data/daily-digest-latest.md">
+          <div class="digest">
+            <div style="background:var(--sky)"><b>10</b>new leads</div>
+            <div style="background:var(--aqua)"><b>10</b>matched</div>
+            <div style="background:var(--mint)"><b>5</b>drafts</div>
+            <div style="background:var(--butter)"><b>0</b>follow-ups due</div>
+          </div>
+          <div class="mail"><div class="h"><b>Forge daily digest</b> · every morning</div>
+            <p>Top match: <b>Chief Architect @ Legion</b> (33.3). 5 proposals approved, waiting to send. No follow-ups due today. Nothing needs your attention beyond 5 quick approvals.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-h center"><span class="tag" style="background:var(--sky)">Why Forge</span><h2>Built for freelancers who hate ops.</h2><p>Your time goes into building and delivering. Forge does the hunting layer that public boards allow, and nothing more.</p></div>
+    <div class="grid3">
+      <div class="feat reveal"><div class="ic" style="background:var(--sky)">🔎</div><h3>Legal lead sources</h3><p>Remotive API, We Work Remotely RSS and RemoteOK API. Attributed and public. No logged-in scraping, no mass-apply bots.</p></div>
+      <div class="feat reveal"><div class="ic" style="background:var(--mint)">🎯</div><h3>Matches that fit</h3><p>Scores each gig on your skills, niche and keywords, and drops anything on your avoid list (unpaid, equity-only, intern).</p></div>
+      <div class="feat reveal"><div class="ic" style="background:var(--butter)">✍️</div><h3>Proposals in your voice</h3><p>Short, plain-English drafts with your portfolio link. Saved as markdown so you can edit before anything goes out.</p></div>
+      <div class="feat reveal"><div class="ic" style="background:var(--aqua)">✅</div><h3>You stay in control</h3><p>Queue states: draft → approved → sent → replied / stop. Sending is dry-run unless you add <code>--send</code> and your own SMTP.</p></div>
+      <div class="feat reveal"><div class="ic" style="background:var(--sky)">📬</div><h3>STOP respected</h3><p>Anyone who replies STOP is marked and never contacted again. Follow-ups only after 3 days.</p></div>
+      <div class="feat reveal"><div class="ic" style="background:var(--mint)">☕</div><h3>One digest a day</h3><p>New leads, pending drafts, follow-ups due. Read it with your morning chai, approve, get back to work.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="alt">
+  <div class="wrap">
+    <div class="sec-h center"><span class="tag">Order</span><h2>Pick how you want to start.</h2><p>Run it yourself, or let us set it up around your skills and niche.</p></div>
+    <div class="plans">
+      <div class="plan reveal"><h3>Self-install</h3><div class="price">Free <small>early access</small></div><p class="mini">For freelancers comfortable with a terminal.</p>
+        <ul><li>Full Forge toolkit</li><li>Lead find, match, draft, queue, digest</li><li>Docs + copy-paste commands</li><li>Repo access on request</li></ul>
+        <a class="btn btn-g" href="#install">Install guide</a></div>
+      <div class="plan pop reveal"><h3>Guided setup</h3><div class="price">$49 <small>one-time</small></div><p class="mini">We set Forge up with you on a short call.</p>
+        <ul><li>Your profile tuned (skills, niche, keywords)</li><li>Proposal template in your voice</li><li>First live run together</li><li>Safe sending setup (test inbox first)</li></ul>
+        <a class="btn btn-t" href="#order" data-plan="Guided setup">Book setup</a></div>
+      <div class="plan reveal"><h3>Done-for-you</h3><div class="price">$29 <small>/ month</small></div><p class="mini">We run Forge for you. You just approve.</p>
+        <ul><li>Daily runs on our side</li><li>Digest in your inbox every morning</li><li>Monthly keyword + template tune-up</li><li>Cancel anytime</li></ul>
+        <a class="btn btn-p" href="#order" data-plan="Done-for-you">Order now</a></div>
+    </div>
+    <p class="note center" style="text-align:center">Early-access pricing. No card needed to book: we confirm by email and share a payment link only after the call.</p>
+
+    <div class="order" id="order">
+      <div>
+        <h3>Book your Forge setup</h3>
+        <p class="mini" style="font-size:1rem">Tell us what you build. We reply within 24 hours with a time for a quick call on Zoom or Google Meet.</p>
+        <p class="mini" style="margin-top:16px">Prefer email? <a href="mailto:proximus.desk@gmail.com?subject=Forge%20setup">proximus.desk@gmail.com</a></p>
+      </div>
+      <!-- Static order form: opens the visitor's mail app with the details filled in.
+           To collect submissions without email, set data-endpoint to a Formspree URL (https://formspree.io/f/XXXX). -->
+      <form id="orderForm" data-endpoint="" novalidate>
+        <div><label for="f-name">Your name</label><input id="f-name" name="name" required autocomplete="name"></div>
+        <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+        <div><label for="f-plan">Plan</label><select id="f-plan" name="plan"><option>Guided setup</option><option>Done-for-you</option><option>Self-install (repo access)</option><option>Not sure yet</option></select></div>
+        <div><label for="f-gh">GitHub username <span style="font-weight:500">(for repo access)</span></label><input id="f-gh" name="github"></div>
+        <div class="full"><label for="f-skills">What do you build?</label><textarea id="f-skills" name="skills" placeholder="e.g. n8n automations, WhatsApp bots, Next.js sites"></textarea></div>
+        <input class="hp" name="website_url" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="full"><button class="btn btn-p" type="submit" style="width:100%">Send my order</button></div>
+        <p class="form-msg" id="formMsg" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<section id="no-github" class="no-gh">
+  <div class="wrap">
+    <div class="no-gh-card">
+      <span class="tag" style="background:var(--amber)">No GitHub needed</span>
+      <h2>Don't know how to set up GitHub?</h2>
+      <p class="lead-tight">No problem. Most freelancers never open GitHub — and you do not need to.</p>
+      <div class="no-gh-paths">
+        <article>
+          <span class="n c1">1</span>
+          <h3>We set it up for you</h3>
+          <p>Book Guided setup ($49) or Done-for-you ($29/mo). We install Forge, tune your profile, and you only approve proposals.</p>
+          <a class="btn btn-t" href="#order">Book setup →</a>
+        </article>
+        <article>
+          <span class="n c2">2</span>
+          <h3>Get a ready ZIP (no GitHub)</h3>
+          <p>Download the Forge starter pack as a ZIP. Unzip on your computer, follow the 5-step picture guide inside, and run one double-click / simple command. No GitHub account.</p>
+          <a class="btn btn-p" href="/downloads/forge-starter.zip" download>Download ZIP</a>
+        </article>
+        <article>
+          <span class="n c3">3</span>
+          <h3>Still want GitHub?</h3>
+          <p>Keep the clone flow below as the primary technical option. Request access if the repo is still private.</p>
+          <a class="btn btn-g" href="#install">GitHub install →</a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <div class="sec-h"><span class="tag" style="background:var(--mint)">Install · GitHub</span><h2>Still want GitHub? Clone and run.</h2><p>Python 3.9+ and a terminal. About five minutes. Prefer ZIP or we set it up? <a href="#no-github">Jump to No GitHub</a>.</p></div>
+    <div class="callout"><b>Early access:</b> the repo is private while we polish it. <a href="#order" data-plan="Self-install (repo access)">Request access</a> with your GitHub username and we add you the same day.</div>
+    <div class="inst">
+      <div>
+        <div class="istep"><span class="n c1">1</span><h4>Clone the repo</h4></div>
+        <div class="cmd"><pre>git clone https://github.com/Raghav11-web/forge-freelancer-ops.git
+cd forge-freelancer-ops</pre><button class="copy">Copy</button></div>
+        <div class="istep"><span class="n c2">2</span><h4>Set up Python (optional venv)</h4></div>
+        <div class="cmd"><pre>python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt</pre><button class="copy">Copy</button></div>
+        <div class="istep"><span class="n c3">3</span><h4>Make your profile</h4></div>
+        <div class="cmd"><pre>cp profiles/demo-freelancer.yaml profiles/me.yaml
+<span class="c"># edit: name, email, skills, niche, rate band,
+# portfolio links, preferred_keywords, avoid_keywords</span></pre><button class="copy">Copy</button></div>
+      </div>
+      <div>
+        <div class="istep"><span class="n c4">4</span><h4>Daily flow</h4></div>
+        <div class="cmd"><pre>python3 scripts/find_leads.py --limit 15
+python3 scripts/match_leads.py --profile profiles/me.yaml
+python3 scripts/draft_proposals.py --top 5
+python3 scripts/queue_outreach.py
+python3 scripts/queue_outreach.py --approve all --list
+python3 scripts/send_outreach.py   <span class="c"># dry-run, safe</span>
+python3 scripts/daily_digest.py</pre><button class="copy">Copy</button></div>
+        <div class="istep"><span class="n c5">5</span><h4>Or run everything at once</h4></div>
+        <div class="cmd"><pre>./scripts/run_pipeline.sh 10</pre><button class="copy">Copy</button></div>
+        <div class="istep"><span class="n" style="background:var(--muted)">!</span><h4>Real sending (only when ready)</h4></div>
+        <div class="cmd"><pre>cp .env.example .env
+<span class="c"># set FORGE_SMTP_USER, FORGE_SMTP_PASS, FORGE_FROM_EMAIL,
+# and FORGE_TEST_TO = your own inbox first</span>
+python3 scripts/send_outreach.py --send --test-only</pre><button class="copy">Copy</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="alt">
+  <div class="wrap" style="max-width:820px">
+    <div class="sec-h center"><h2>Questions</h2></div>
+    <details><summary>Does Forge apply to jobs on Upwork or LinkedIn for me?</summary><p>No. Forge only reads public boards that allow it (Remotive, We Work Remotely, RemoteOK). It never logs into Upwork or LinkedIn, so your accounts stay safe.</p></details>
+    <details><summary>Will it send emails without asking me?</summary><p>Never. Sending is a dry-run by default. Real mail needs your own SMTP settings and the <code>--send</code> flag, and we recommend <code>--test-only</code> to your own inbox first.</p></details>
+    <details><summary>What if someone says STOP?</summary><p>Mark it with <code>queue_outreach.py --stop q-ID</code> and Forge never contacts them again.</p></details>
+    <details><summary>Who is behind Forge?</summary><p>Raghav, at <a href="https://proximus-landing.vercel.app">Proximus</a>. We build AI automation for small businesses and made Forge to stop wasting our own hours on gig hunting.</p></details>
+    <details><summary>Is my data stored anywhere?</summary><p>Self-install runs fully on your machine. Leads, drafts and the queue are plain files in your folder.</p></details>
+    <details open><summary>I don't use GitHub — can I still use Forge?</summary><p>Yes. <a href="#no-github">Download the ZIP starter pack</a> (no GitHub account) or book Guided / Done-for-you setup and we install it for you. GitHub stays available if you want it.</p></details>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div><b style="color:var(--ink)">Forge</b> · You build. We find the work.</div>
+  <div>Made by Raghav · <a href="https://proximus-landing.vercel.app">Proximus</a> · <a href="mailto:proximus.desk@gmail.com">proximus.desk@gmail.com</a></div>
+</div></footer>
+<script src="/app.js" defer></script>
+</body>
+</html>

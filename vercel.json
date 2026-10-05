@@ -1,0 +1,25 @@
+{
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/downloads/forge-starter.zip",
+      "destination": "https://github.com/Raghav11-web/forge-starter-dist/releases/download/v1/forge-starter.zip",
+      "permanent": false
+    }
+  ]
+}
